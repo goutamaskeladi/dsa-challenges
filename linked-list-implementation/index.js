@@ -67,12 +67,25 @@ class LinkedList {
     }
     console.log(elements);
   }
+  // Find middle
+  findMiddle() {
+    let slow = this.head;
+    let fast = this.head;
+    while (fast !== null && fast.next !== null) {
+      // make sure fast reaches end
+      fast = fast.next.next; // fast is set to twice speed.
+      slow = slow.next; // slow is set to one by one.
+    }
+    return slow.data; // which is going to give middle
+  }
 }
 
-const myObj = new LinkedList();
-myObj.append(100);
-myObj.append(200);
-myObj.prepend(50);
-myObj.delete(100);
-console.log(myObj.search(500));
-myObj.print();
+module.exports = LinkedList;
+
+// const myObj = new LinkedList();
+// myObj.append(100);
+// myObj.append(200);
+// myObj.prepend(50);
+// myObj.delete(100);
+// console.log(myObj.search(500));
+// myObj.print();
