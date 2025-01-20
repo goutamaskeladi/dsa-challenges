@@ -29,7 +29,7 @@ class Queue {
     return this.tail - this.head;
   }
   isEmpty() {
-    return this.getLength === 0;
+    return this.getLength() === 0;
   }
   isFull() {
     return this.getLength() === this.maxSize;
